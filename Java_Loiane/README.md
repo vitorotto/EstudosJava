@@ -35,7 +35,7 @@ Nessa aula criamos um `arquivo.java` com o código acima e compilamos ele manual
 2. Implementar um programa Java que imprima na tela "Olá Mundo!"
 3. Compilar e Executar o programa
 
-## Aula 06 - Passando Argumentos para o Programa
+# Aula 06 - Passando Argumentos para o Programa
 + args do método main -> Quando rodamos um programa pela linha de comando em java, ele pode receber argumentos. O `args` é um array de Strings, por isso temos o `String[]` antes da palavra args.
 
 ### Código da aula
@@ -57,7 +57,7 @@ java Argumentos Vitor # Só podemos passar uma palavra
 java Argumentos "Vitor Hugo Otto" # Assim tudo o que está entre aspas é o indice 0 do vetor "args"
 ```
 
-# Tema de casa da aula 6
+## Tema de casa da aula 6
 1. Criar um arquivo chamado Argumentos2.java
 2. Implementar um programa Java que escreva na tela "Olá Mundo!" + o argumento passado para o programa
 3. Compilar e executar o programa
