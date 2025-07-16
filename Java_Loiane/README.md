@@ -57,7 +57,7 @@ java Argumentos Vitor # Só podemos passar uma palavra
 java Argumentos "Vitor Hugo Otto" # Assim tudo o que está entre aspas é o indice 0 do vetor "args"
 ```
 
-## Tema de casa da aula 6
+# Tema de casa da aula 6
 1. Criar um arquivo chamado Argumentos2.java
 2. Implementar um programa Java que escreva na tela "Olá Mundo!" + o argumento passado para o programa
 3. Compilar e executar o programa
