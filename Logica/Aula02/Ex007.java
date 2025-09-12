@@ -12,6 +12,6 @@ public class Ex007 {
         System.out.println("Escreva o valor do raio: ");
         double r = s.nextDouble();
 
-        System.out.println(String.format("Área = " + (Math.PI * (Math.pow(r, 2))), 2));
+        System.out.println("Área = " + (Math.PI * (Math.pow(r, 2))));
     }
 }
