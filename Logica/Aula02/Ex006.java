@@ -7,15 +7,15 @@ public class Ex006 {
                            percentual de reajuste. Calcular e escrever o valor do novo salário."""
         );
 
-        Scanner s = new Scanner(System.in);
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Informe o salário mensal atual do funcionário");
+            float salAtual = s.nextFloat();
 
-        System.out.println("Informe o salário mensal atual do funcionário");
-        float salAtual = s.nextFloat();
+            System.out.println("Informe o percentual do reajuste: ");
+            float reaj = s.nextFloat();
 
-        System.out.println("Informe o percentual do reajuste: ");
-        float reaj = s.nextFloat();
-
-        // Calculando o reajuste
-        System.out.println("Salário reajustado: " + ((salAtual * (reaj / 100) + salAtual)));
+            // Calculando o reajuste
+            System.out.println("Salário reajustado: " + ((salAtual * (reaj / 100) + salAtual)));
+        }
     }
 }

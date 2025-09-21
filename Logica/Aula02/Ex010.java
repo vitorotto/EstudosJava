@@ -8,11 +8,12 @@ import java.util.Scanner;
 
 public class Ex010 {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Informe a temperatura em C°: ");
-        float celcius = s.nextFloat();
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Informe a temperatura em C°: ");
+            float celcius = s.nextFloat();
 
-        // Calculando e exibindo os resultados
-        System.out.println("fahrenheit: " + ((9 * celcius + 160)) / 5);
+            // Calculando e exibindo os resultados
+            System.out.println("fahrenheit: " + ((9 * celcius + 160)) / 5);
+        }
     }
 }

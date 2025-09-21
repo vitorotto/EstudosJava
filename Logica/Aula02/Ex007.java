@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 public class Ex007 {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Escreva o valor do raio: ");
-        double r = s.nextDouble();
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Escreva o valor do raio: ");
+            double r = s.nextDouble();
 
-        System.out.println("Área = " + (Math.PI * (Math.pow(r, 2))));
+            System.out.println("Área = " + (Math.PI * (Math.pow(r, 2))));
+        }
     }
 }

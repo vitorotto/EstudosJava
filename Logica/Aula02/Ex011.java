@@ -8,14 +8,15 @@ import java.util.Scanner;
 
 public class Ex011 {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Informe um numero");
-        float n1 = s.nextFloat();
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Informe um numero");
+            float n1 = s.nextFloat();
 
-        System.out.println("Informe outro número");
-        float n2 = s.nextFloat();
+            System.out.println("Informe outro número");
+            float n2 = s.nextFloat();
 
-        // Calculando e exibindo os resultados
-        System.out.println("Resultado: " + (n1 / n2));
+            // Calculando e exibindo os resultados
+            System.out.println("Resultado: " + (n1 / n2));
+        }
     }
 }

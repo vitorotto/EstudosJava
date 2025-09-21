@@ -7,13 +7,14 @@ mês possui 30 dias.
 import java.util.Scanner;
 public class ex012 {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Informe o mês: ");
-        int mes = s.nextInt();
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.println("Informe o mês: ");
+            int mes = s.nextInt();
 
-        System.out.println("Informe o dia do mês");
-        int dia = s.nextInt();
+            System.out.println("Informe o dia do mês");
+            int dia = s.nextInt();
 
-        System.out.println("Se passaram " + ((mes * 30) + dia) + "dias");
+            System.out.println("Se passaram " + ((mes * 30) + dia) + "dias");
+        }
     }
 }
