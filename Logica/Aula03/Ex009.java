@@ -39,7 +39,7 @@ public class Ex009 {
         float Me = (n1 + n2 + n3) / 3;
 
         // Calculando a MA
-        float MA = (n1 + n2 * 2 * n3 * 3 + Me) / 7;
+        float MA = (n1 + n2 * 2 + n3 * 3 + Me) / 7;
         
         String conceito;
 
