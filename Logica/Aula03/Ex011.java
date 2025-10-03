@@ -13,6 +13,21 @@ public class Ex011 {
         System.out.println("Número da conta: ");
         int numConta = s.nextInt();
 
-        
+        System.out.println("Saldo da conta: ");
+        float saldoConta = s.nextFloat();
+
+        System.out.println("Débito: ");
+        float debito = s.nextFloat();
+
+        System.out.println("Crédito: ");
+        float credito = s.nextFloat();
+
+        // calculando o saldo total
+        float saldoTotal = saldoConta - debito + credito;
+
+        if (saldoTotal >= 0)
+            System.out.println("Saldo positivo");
+        else
+            System.out.println("Saldo negativo");
     }
 }
