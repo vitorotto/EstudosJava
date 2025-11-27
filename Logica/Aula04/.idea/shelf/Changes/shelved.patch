@@ -1,0 +1,37 @@
+Index: ../Aula02/Ex005.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\r\n\r\npublic class Ex005 {\r\n    public static void main(String[] args) {\r\n        try (Scanner s = new Scanner(System.in)) {\r\n            System.out.println(\"Um  motorista  deseja  colocar  no  seu  tanque  X  reais  de  gasolina.  Escreva  um programa  para  ler  o  preço  do  litro  da  gasolina  e  o  valor  do  pagamento, e exibir  quantos litros ele conseguiu colocar no tanque.\");\r\n\r\n            System.out.println(\"Insira o valor do litro da gasolina: \");\r\n            float valGas = s.nextFloat();\r\n\r\n            System.out.println(\"Insira o valor pago: \");\r\n            float valPago = s.nextFloat();\r\n\r\n            // calculando a litragem\r\n            System.out.println(\"Litros abastecidos: \" + (valPago / valGas));\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Aula02/Ex005.java b/../Aula02/Ex005.java
+--- a/../Aula02/Ex005.java	(revision 452ec241681c7eb3b7bd75c42dbe995250884ca8)
++++ b/../Aula02/Ex005.java	(date 1759763551460)
+@@ -1,18 +1,15 @@
++/*
++* Um motorista deseja colocar no seu tanque X reais de gasolina. Escreva um
++* programa para ler o preço do litro da gasolina e o valor do pagamento, e exibir
++* quantos litros ele conseguiu colocar no tanque
++*/
++
+ import java.util.Scanner;
+ 
+ public class Ex005 {
+     public static void main(String[] args) {
+-        try (Scanner s = new Scanner(System.in)) {
+-            System.out.println("Um  motorista  deseja  colocar  no  seu  tanque  X  reais  de  gasolina.  Escreva  um programa  para  ler  o  preço  do  litro  da  gasolina  e  o  valor  do  pagamento, e exibir  quantos litros ele conseguiu colocar no tanque.");
++        Scanner s = new Scanner(System.in);
+ 
+-            System.out.println("Insira o valor do litro da gasolina: ");
+-            float valGas = s.nextFloat();
+-
+-            System.out.println("Insira o valor pago: ");
+-            float valPago = s.nextFloat();
+-
+-            // calculando a litragem
+-            System.out.println("Litros abastecidos: " + (valPago / valGas));
+-        }
++        
+     }
+ }
