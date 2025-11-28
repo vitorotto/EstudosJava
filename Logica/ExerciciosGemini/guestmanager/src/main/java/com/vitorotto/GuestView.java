@@ -24,13 +24,19 @@ public class GuestView {
     public void initView() {
         showMenu();
         System.out.println("Digite uma opção: ");
-        setOpc(s.nextInt());
+        setOpc(validateIntInputType(s));
+        if (opc == 0) {
+            System.out.println("Programa encerrado");
+        }
         while (opc != 0) {
             exec(opc);
+            showMenu();
+            System.out.println("Digite uma opção: ");
+            setOpc(validateIntInputType(s));
         }
     }
 
-    private static int validateAgeInputType(Scanner s) {
+    private static int validateIntInputType(Scanner s) {
         boolean validInput = false;
         int result = 0;
 
@@ -49,14 +55,14 @@ public class GuestView {
 
     public void exec(int opc) {
         switch (opc) {
-            case 0 -> {
-                System.out.println("Saindo...");
-            }
             case 1 -> addGuestView();
+            case 2 -> delGuestView();
+            case 3 -> showGuestsListView();
             default -> throw new AssertionError();
         }
     }
 
+    // Função para acessar o controller e adicionar convidado na lista
     public boolean addGuestView() {
         String guestName;
         int guestAge;
@@ -66,24 +72,54 @@ public class GuestView {
         guestName = s.nextLine();
 
         System.out.println("Informe a idade do convidado: ");
-        guestAge = validateAgeInputType(s);
+        guestAge = validateIntInputType(s);
 
         s.nextLine();
         try {
             boolean addedUser = controller.addGuest(new GuestModel(guestName, guestAge));
             if (addedUser) {
                 System.out.println("Convidado adicionado a lista com sucesso!");
-                controller.showGuests();
-                showMenu();
+                showGuestsListView();
                 return true;
             } else {
-                showMenu();
                 return false;
             }
         } catch (Exception e) {
-            System.out.println("Erro ao adicionar convidado: " + e);
-            showMenu();
+            System.out.println("Erro ao adicionar convidado: " + e.getMessage());
             return false;
+        }
+    }
+
+    // Função para acessar o controller e remover convidado da lista
+    public boolean delGuestView() {
+        s.nextLine();
+        String guestName;
+        showGuestsListView();
+        System.out.println("Informe o nome do convidado que deseja remover: ");
+        guestName = s.next();
+        s.nextLine();
+        try {
+            controller.removeGuestByName(guestName);
+            System.out.println("Convidado " + guestName + " removido da lista com sucesso");
+            showGuestsListView();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    // Função para acessar o controller e exibir a lista de convidados
+    public void showGuestsListView() {
+        System.out.println("Lista de Convidados: ");
+        if (controller.isEmpty()) {
+            System.out.println("Nenhum convidado na lista");
+        } else {
+            for (int i = 0; i < controller.guestsList.size(); i++) {
+                String name = controller.guestsList.get(i).name;
+                int age = controller.guestsList.get(i).age;
+                System.out.printf("%d: %s - %d anos\n", i + 1, name, age);
+            }
         }
     }
 
