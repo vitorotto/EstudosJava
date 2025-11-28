@@ -1,3 +1,5 @@
+package org.example;
+
 /*
 * Escreva um programa que leia 10 valores e conte quantos deles estão no intervalo entre 10 e 20. Depois escreva essa informação
 * */
