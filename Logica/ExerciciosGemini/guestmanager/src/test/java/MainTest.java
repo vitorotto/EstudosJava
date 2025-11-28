@@ -2,24 +2,26 @@ import java.util.ArrayList;
 
 import com.vitorotto.GuestController;
 import com.vitorotto.GuestModel;
+import com.vitorotto.GuestView;
 
 public class MainTest {
-public static void main(String[] args) {
+    public static void main(String[] args) {
         ArrayList<GuestModel> lista01 = new ArrayList<>();
 
         GuestController repository = new GuestController(lista01);
+        GuestView view = new GuestView(null, repository);
 
         System.out.println("Adicionando Teste na lista e exibindo ela");
         repository.addGuest(new GuestModel("Teste", 12));
-        repository.showGuests();
+        view.showGuestsListView();
 
         System.out.println("\nAdicionando Teste 2 na lista e exibindo ela");
         repository.addGuest(new GuestModel(("Teste 2"), 10));
-        repository.showGuests();
-        
+        view.showGuestsListView();
+
         System.out.println("\nRemovendo convidado Teste e exibindo a lista");
         repository.removeGuestByName("Teste");
-        repository.showGuests();
+        view.showGuestsListView();
 
         System.out.println("\nPesquisando convidado pela posição");
         GuestModel user0 = repository.findGuestByPosition(0);
