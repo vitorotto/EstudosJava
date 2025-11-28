@@ -12,7 +12,11 @@ public class GuestController {
     // Função para adicionar convidado na lista
     public boolean addGuest(GuestModel guest) {
         try {
-            guestsList.add(guest);
+            if (guest.age < 18) {
+                throw new Exception("Menores de idade não podem entrar");
+            } else {
+                guestsList.add(guest);
+            }
             return true;
         } catch (Exception e) {
             return false;
@@ -43,7 +47,7 @@ public class GuestController {
         } catch (Exception e) {
             System.out.println("Erro: " + e);
             return false;
-        } 
+        }
     }
 
     // Função para retornar convidado pela posição
