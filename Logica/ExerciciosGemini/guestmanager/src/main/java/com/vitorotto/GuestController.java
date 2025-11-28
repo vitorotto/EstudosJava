@@ -2,6 +2,8 @@ package com.vitorotto;
 
 import java.util.ArrayList;
 
+import com.vitorotto.exceptions.AgeValidationException;
+
 public class GuestController {
     ArrayList<GuestModel> guestsList;
 
@@ -13,21 +15,17 @@ public class GuestController {
     public boolean addGuest(GuestModel guest) {
         try {
             if (guest.age < 18) {
-                throw new Exception("Menores de idade não podem entrar");
+                throw new AgeValidationException("Menores de idade não podem entrar");
             } else {
                 guestsList.add(guest);
             }
             return true;
-        } catch (Exception e) {
+        } catch (AgeValidationException e) {
+            System.out.println(e.getMessage());
             return false;
-        }
-    }
-
-    // Função para exibir os convidados
-    public void showGuests() {
-        for (int i = 0; i < guestsList.size(); i++) {
-            GuestModel currentGuest = guestsList.get(i);
-            System.out.println("Nome: " + currentGuest.getName() + ", Idade: " + currentGuest.getAge());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
         }
     }
 
@@ -81,5 +79,10 @@ public class GuestController {
             System.out.println("Erro ao verificar disponibilidade do nome: " + e);
             return false;
         }
+    }
+
+    // Função para verificar se a lista está vazia
+    public boolean isEmpty() {
+        return guestsList.size() <= 0;
     }
 }
