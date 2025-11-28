@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0a0f7543-9187-4d6d-821f-8b5f025117a8" name="Changes" comment="Ex 13 a 22" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vitorotto&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vitorotto/EstudosJava.git&quot;,
+    &quot;accountId&quot;: &quot;e340a285-07f3-409e-941b-4cf9aca8bce5&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33i5XJ1Mh3hwQ6o4FY9oDdkNOnp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Ex001.executor": "Run",
+    "Application.Ex002.executor": "Run",
+    "Application.Ex003.executor": "Run",
+    "Application.Ex004.executor": "Run",
+    "Application.Ex005.executor": "Run",
+    "Application.Ex006.executor": "Run",
+    "Application.Ex007.executor": "Run",
+    "Application.Ex008.executor": "Run",
+    "Application.Ex009.executor": "Run",
+    "Application.Ex010.executor": "Run",
+    "Application.Ex011.executor": "Run",
+    "Application.Ex012.executor": "Run",
+    "Application.Ex013.executor": "Run",
+    "Application.Ex014.executor": "Run",
+    "Application.Ex015.executor": "Run",
+    "Application.Ex016.executor": "Run",
+    "Application.Ex017.executor": "Run",
+    "Application.Ex018.executor": "Run",
+    "Application.Ex019.executor": "Run",
+    "Application.Ex020.executor": "Run",
+    "Application.Ex021.executor": "Run",
+    "Application.Ex022.executor": "Run",
+    "Application.ex013.executor": "Run",
+    "Application.org.example.Ex004.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Github/EstudosJava/Logica/Aula04",
+    "onboarding.tips.debug.path": "C:/Github/EstudosJava/Logica/Aula04/untitled/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "ide.date.format"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Github\EstudosJava\Logica\Aula04\untitled\src\main\java\org\example" />
+      <recent name="C:\Github\EstudosJava\Logica\Aula04\src\main\java\org\example" />
+      <recent name="C:\Github\EstudosJava\Logica\Aula04\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Ex001" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex001" />
+      <module name="untitled" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex002" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex002" />
+      <module name="untitled" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex003" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex003" />
+      <module name="untitled" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Ex004" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Ex004" />
+      <module name="untitled" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Aula04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Aula04" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Ex001" />
+      <item itemvalue="Application.Ex002" />
+      <item itemvalue="Application.Ex003" />
+      <item itemvalue="Application.org.example.Ex004" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.org.example.Ex004" />
+        <item itemvalue="Application.Ex001" />
+        <item itemvalue="Application.Ex003" />
+        <item itemvalue="Application.Ex002" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a0f7543-9187-4d6d-821f-8b5f025117a8" name="Changes" comment="" />
+      <created>1759787089933</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759787089933</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Ex 01 a 04">
+      <option name="closed" value="true" />
+      <created>1759801555129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759801555129</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ex 01 a 04">
+      <option name="closed" value="true" />
+      <created>1761426815278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761426815278</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ex 01 a 04">
+      <option name="closed" value="true" />
+      <created>1761426861845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761426861845</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Lista aula 04">
+      <option name="closed" value="true" />
+      <created>1761426899083</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761426899083</updated>
+    </task>
+    <task id="LOCAL-00005" summary="é">
+      <option name="closed" value="true" />
+      <created>1761426940724</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761426940724</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ex 13 a 22">
+      <option name="closed" value="true" />
+      <created>1761516375879</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761516375879</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ex 01 a 04" />
+    <MESSAGE value="Lista aula 04" />
+    <MESSAGE value="é" />
+    <MESSAGE value="Ex 13 a 22" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ex 13 a 22" />
+  </component>
+</project>
