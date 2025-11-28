@@ -2,10 +2,10 @@ package com.vitorotto;
 
 import java.util.ArrayList;
 
-public class GuestRepo {
+public class GuestController {
     ArrayList<GuestModel> guestsList;
 
-    public GuestRepo(ArrayList<GuestModel> guestsList) {
+    public GuestController(ArrayList<GuestModel> guestsList) {
         this.guestsList = guestsList;
     }
 
