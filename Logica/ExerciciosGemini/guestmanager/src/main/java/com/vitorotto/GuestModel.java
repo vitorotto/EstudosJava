@@ -2,6 +2,7 @@ package com.vitorotto;
 
 public class GuestModel {
     String name;
+    String status = "DENTRO";
     Integer age;
 
     public GuestModel(String name, Integer age) {
@@ -25,10 +26,12 @@ public class GuestModel {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "GuestModel [name=" + name + ", age=" + age + "]";
+    public String getStatus() {
+        return status;
     }
 
-    
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }

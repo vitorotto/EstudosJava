@@ -24,7 +24,7 @@ public class MainTest {
         view.showGuestsListView();
 
         System.out.println("\nPesquisando convidado pela posição");
-        GuestModel user0 = repository.findGuestByPosition(0);
+        GuestModel user0 = repository.findGuestByName("Teste 2");
         System.out.println(user0.toString());
 
         System.out.println("\nVerificando existencia de convidado Teste 2 e Juliana");

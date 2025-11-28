@@ -49,17 +49,18 @@ public class GuestController {
     }
 
     // Função para retornar convidado pela posição
-    public GuestModel findGuestByPosition(int pos) {
+    public GuestModel findGuestByName(String name) {
         try {
             GuestModel data = null;
+            GuestModel currentGuest;
             for (int i = 0; i < guestsList.size(); i++) {
-                if (i == pos) {
-                    data = guestsList.get(i);
+                currentGuest = guestsList.get(i);
+                if (currentGuest.getName().equals(name)) {
+                    data = currentGuest;
                 }
             }
             return data;
         } catch (Exception e) {
-            System.out.println("Erro ao procurar convidado pela posição: " + e);
             return null;
         }
     }
@@ -79,6 +80,18 @@ public class GuestController {
             System.out.println("Erro ao verificar disponibilidade do nome: " + e);
             return false;
         }
+    }
+
+    // Função para atualizar o status do convidado
+    public boolean updateGuestStatusByName(String name, String status) {
+    try {
+        GuestModel userToUpdate = findGuestByName(name);
+        userToUpdate.setStatus(status);
+        return true;
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+        return false;
+    }
     }
 
     // Função para verificar se a lista está vazia

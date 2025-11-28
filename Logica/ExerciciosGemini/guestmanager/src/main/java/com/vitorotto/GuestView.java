@@ -12,18 +12,28 @@ public class GuestView {
         this.controller = controller;
     }
 
+    // Getters e Setters
+    public void setOpc(int opc) {
+        this.opc = opc;
+    }
+
+    public int getOpc() {
+        return opc;
+    }
+
     public void showMenu() {
         System.out.println("/* ->> MENU DO SISTEMA <<- */");
         System.out.println("1 - Adicionar Convidado a Lista");
         System.out.println("2 - Remover Convidado da Lista");
         System.out.println("3 - Exibir a lista de convidados");
         System.out.println("4 - Atualizar o status do convidado");
+        System.out.println("5 - Procurar convidado");
         System.out.println("0 - Sair");
     }
 
     public void initView() {
         showMenu();
-        System.out.println("Digite uma opção: ");
+        System.out.printf("Digite uma opção: ");
         setOpc(validateIntInputType(s));
         if (opc == 0) {
             System.out.println("Programa encerrado");
@@ -31,8 +41,11 @@ public class GuestView {
         while (opc != 0) {
             exec(opc);
             showMenu();
-            System.out.println("Digite uma opção: ");
+            System.out.printf("Digite uma opção: ");
             setOpc(validateIntInputType(s));
+            if (opc == 0) {
+                System.out.println("Programa encerrado");
+            }
         }
     }
 
@@ -58,6 +71,8 @@ public class GuestView {
             case 1 -> addGuestView();
             case 2 -> delGuestView();
             case 3 -> showGuestsListView();
+            case 4 -> updateGuestStatusView();
+            case 5 -> findGuestView();
             default -> throw new AssertionError();
         }
     }
@@ -116,19 +131,60 @@ public class GuestView {
             System.out.println("Nenhum convidado na lista");
         } else {
             for (int i = 0; i < controller.guestsList.size(); i++) {
-                String name = controller.guestsList.get(i).name;
-                int age = controller.guestsList.get(i).age;
-                System.out.printf("%d: %s - %d anos\n", i + 1, name, age);
+                String name = controller.guestsList.get(i).getName();
+                int age = controller.guestsList.get(i).getAge();
+                String status = controller.guestsList.get(i).getStatus();
+                System.out.printf("%d: %s - %d anos - ESTÁ %s\n", i + 1, name, age, status);
             }
         }
     }
 
-    // Getters e Setters
-    public void setOpc(int opc) {
-        this.opc = opc;
+    public void findGuestView() {
+        try {
+            if (controller.isEmpty()) {
+                throw new NullPointerException("A lista está vazia");
+            }
+            s.nextLine();
+            System.out.println("Informe o nome do convidado que deseja encontrar: ");
+            String name = s.next();
+            s.nextLine();
+            if (controller.findGuestByName(name) != null) {
+                String guestName = controller.findGuestByName(name).getName();
+                int guestAge = controller.findGuestByName(name).getAge();
+                String guestStatus = controller.findGuestByName(name).getStatus();
+                System.out.println("Nome: " + guestName + " Idade: " + guestAge + " ESTÁ " + guestStatus);
+            } else {
+                throw new NullPointerException("Convidado " + name + " não encontrado");
+            }
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public int getOpc() {
-        return opc;
+    // Função para atualizar o status do convidado
+    public void updateGuestStatusView() {
+        try {
+            if (controller.isEmpty()) {
+                throw new NullPointerException("A lista está vazia");
+            }
+            s.nextLine();
+            System.out.println("Informe o nome do convidado que deseja atualizar: ");
+            String guestName = s.next();
+            String[] statusList = { "FORA", "DENTRO" };
+            String currentStatus = controller.findGuestByName(guestName).getStatus();
+
+            if (currentStatus.equals(statusList[0])) {
+                currentStatus = statusList[1];
+                controller.updateGuestStatusByName(guestName, currentStatus);
+                System.out.println("Status atualizado para: " + statusList[1]);
+            } else {
+                currentStatus = statusList[0];
+                controller.updateGuestStatusByName(guestName, currentStatus);
+                System.out.println("Status atualizado para: " + statusList[0]);
+            }
+
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
