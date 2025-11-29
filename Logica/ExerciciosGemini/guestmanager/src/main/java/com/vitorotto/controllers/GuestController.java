@@ -1,8 +1,9 @@
-package com.vitorotto;
+package com.vitorotto.controllers;
 
 import java.util.ArrayList;
 
 import com.vitorotto.exceptions.AgeValidationException;
+import com.vitorotto.models.GuestModel;
 
 public class GuestController {
     ArrayList<GuestModel> guestsList;
@@ -12,12 +13,12 @@ public class GuestController {
     }
 
     // Função para adicionar convidado na lista
-    public boolean addGuest(GuestModel guest) {
+    public boolean addGuest(String name, int age) {
         try {
-            if (guest.getAge() < 18) {
+            if (age < 18) {
                 throw new AgeValidationException("Menores de idade não podem entrar");
             } else {
-                guestsList.add(guest);
+                guestsList.add(new GuestModel(name, age));
             }
             return true;
         } catch (AgeValidationException e) {

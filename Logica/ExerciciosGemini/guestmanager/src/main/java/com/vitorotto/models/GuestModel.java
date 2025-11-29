@@ -1,4 +1,4 @@
-package com.vitorotto;
+package com.vitorotto.models;
 
 public class GuestModel {
     private String name;

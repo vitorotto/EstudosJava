@@ -1,34 +1,34 @@
 import java.util.ArrayList;
 
-import com.vitorotto.GuestController;
-import com.vitorotto.GuestModel;
-import com.vitorotto.GuestView;
+import com.vitorotto.controllers.GuestController;
+import com.vitorotto.models.GuestModel;
+import com.vitorotto.views.GuestView;
 
 public class MainTest {
     public static void main(String[] args) {
         ArrayList<GuestModel> lista01 = new ArrayList<>();
 
-        GuestController repository = new GuestController(lista01);
-        GuestView view = new GuestView(null, repository);
+        GuestController controller = new GuestController(lista01);
+        GuestView view = new GuestView(null, controller);
 
         System.out.println("Adicionando Teste na lista e exibindo ela");
-        repository.addGuest(new GuestModel("Teste", 12));
+        controller.addGuest("Teste", 12);
         view.showGuestsListView();
 
         System.out.println("\nAdicionando Teste 2 na lista e exibindo ela");
-        repository.addGuest(new GuestModel(("Teste 2"), 10));
+        controller.addGuest("Teste 2", 10);
         view.showGuestsListView();
 
         System.out.println("\nRemovendo convidado Teste e exibindo a lista");
-        repository.removeGuestByName("Teste");
+        controller.removeGuestByName("Teste");
         view.showGuestsListView();
 
         System.out.println("\nPesquisando convidado pela posição");
-        GuestModel user0 = repository.findGuestByName("Teste 2");
+        GuestModel user0 = controller.findGuestByName("Teste 2");
         System.out.println(user0.toString());
 
         System.out.println("\nVerificando existencia de convidado Teste 2 e Juliana");
-        System.out.println(repository.existingGuest("Teste 2"));
-        System.out.println(repository.existingGuest("Juliana"));
+        System.out.println(controller.existingGuest("Teste 2"));
+        System.out.println(controller.existingGuest("Juliana"));
     }
 }

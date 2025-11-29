@@ -1,7 +1,8 @@
-package com.vitorotto;
+package com.vitorotto.views;
 
 import java.util.Scanner;
 
+import com.vitorotto.controllers.GuestController;
 import com.vitorotto.exceptions.GuestNotFoundException;
 
 public class GuestView {
@@ -93,7 +94,7 @@ public class GuestView {
 
         s.nextLine();
         try {
-            boolean addedUser = controller.addGuest(new GuestModel(guestName, guestAge));
+            boolean addedUser = controller.addGuest(guestName, guestAge);
             if (addedUser) {
                 System.out.println("Convidado adicionado a lista com sucesso!");
                 showGuestsListView();
