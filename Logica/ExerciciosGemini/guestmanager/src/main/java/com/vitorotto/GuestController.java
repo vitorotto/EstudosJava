@@ -14,7 +14,7 @@ public class GuestController {
     // Função para adicionar convidado na lista
     public boolean addGuest(GuestModel guest) {
         try {
-            if (guest.age < 18) {
+            if (guest.getAge() < 18) {
                 throw new AgeValidationException("Menores de idade não podem entrar");
             } else {
                 guestsList.add(guest);
@@ -29,18 +29,24 @@ public class GuestController {
         }
     }
 
+    // Função para retornar a lista de convidados
+    public ArrayList<GuestModel> getGuests() {
+        return guestsList;
+    }
+
     // Função para remover convidado pelo nome
     public boolean removeGuestByName(String name) {
         try {
-            boolean isRemoved = false;
-            for (int i = 0; i < guestsList.size(); i++) {
-                GuestModel currentGuest = guestsList.get(i);
+            boolean isRemoved = guestsList.removeIf(guest -> guest.getName().equals(name));
+            // Versão antiga que pode bugar
+            // for (int i = 0; i < guestsList.size(); i++) {
+            //     GuestModel currentGuest = guestsList.get(i);
 
-                if (name.equals(currentGuest.getName())) {
-                    guestsList.remove(i);
-                    isRemoved = true;
-                }
-            }
+            //     if (name.equals(currentGuest.getName())) {
+            //         guestsList.remove(i);
+            //         isRemoved = true;
+            //     }
+            // }
             return isRemoved;
         } catch (Exception e) {
             System.out.println("Erro: " + e);

@@ -1,9 +1,9 @@
 package com.vitorotto;
 
 public class GuestModel {
-    String name;
-    String status = "DENTRO";
-    Integer age;
+    private String name;
+    private String status = "DENTRO";
+    private Integer age;
 
     public GuestModel(String name, Integer age) {
         this.name = name;

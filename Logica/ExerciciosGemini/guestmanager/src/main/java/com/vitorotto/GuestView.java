@@ -2,6 +2,8 @@ package com.vitorotto;
 
 import java.util.Scanner;
 
+import com.vitorotto.exceptions.GuestNotFoundException;
+
 public class GuestView {
     private int opc;
     private final Scanner s;
@@ -59,7 +61,7 @@ public class GuestView {
                 validInput = true;
             } else {
                 System.out.println("Entrada inválida. Por favor, digite um número inteiro.");
-                s.next();
+                s.nextLine();
                 System.out.print("Digite um número inteiro: ");
             }
         }
@@ -111,7 +113,7 @@ public class GuestView {
         String guestName;
         showGuestsListView();
         System.out.println("Informe o nome do convidado que deseja remover: ");
-        guestName = s.next();
+        guestName = s.nextLine();
         s.nextLine();
         try {
             controller.removeGuestByName(guestName);
@@ -130,10 +132,11 @@ public class GuestView {
         if (controller.isEmpty()) {
             System.out.println("Nenhum convidado na lista");
         } else {
-            for (int i = 0; i < controller.guestsList.size(); i++) {
-                String name = controller.guestsList.get(i).getName();
-                int age = controller.guestsList.get(i).getAge();
-                String status = controller.guestsList.get(i).getStatus();
+            for (int i = 0; i < controller.getGuests().size(); i++) {
+                
+                String name = controller.getGuests().get(i).getName();
+                int age = controller.getGuests().get(i).getAge();
+                String status = controller.getGuests().get(i).getStatus();
                 System.out.printf("%d: %s - %d anos - ESTÁ %s\n", i + 1, name, age, status);
             }
         }
@@ -146,7 +149,7 @@ public class GuestView {
             }
             s.nextLine();
             System.out.println("Informe o nome do convidado que deseja encontrar: ");
-            String name = s.next();
+            String name = s.nextLine();
             s.nextLine();
             if (controller.findGuestByName(name) != null) {
                 String guestName = controller.findGuestByName(name).getName();
@@ -154,9 +157,9 @@ public class GuestView {
                 String guestStatus = controller.findGuestByName(name).getStatus();
                 System.out.println("Nome: " + guestName + " Idade: " + guestAge + " ESTÁ " + guestStatus);
             } else {
-                throw new NullPointerException("Convidado " + name + " não encontrado");
+                throw new GuestNotFoundException("Convidado " + name + " não encontrado");
             }
-        } catch (NullPointerException e) {
+        } catch (GuestNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -169,7 +172,7 @@ public class GuestView {
             }
             s.nextLine();
             System.out.println("Informe o nome do convidado que deseja atualizar: ");
-            String guestName = s.next();
+            String guestName = s.nextLine();
             String[] statusList = { "FORA", "DENTRO" };
             String currentStatus = controller.findGuestByName(guestName).getStatus();
 
