@@ -1,0 +1,10 @@
+Funcionalidades que são necessárias para implementar essa playlist
+1. Priorizar musicas (Uma lista secundária com todas as musicas priorizadas)
+2. Adicionar musica no final da lista
+3. Adicionar musica no inicio da lista
+4. Adicionar musica em determinada posição da lista
+5. Editar uma música
+6. Executar playlist
+7. Pular música
+8. recomeçar musica
+9. voltar para a música anterior 
