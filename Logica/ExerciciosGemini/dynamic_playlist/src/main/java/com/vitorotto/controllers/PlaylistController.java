@@ -21,19 +21,6 @@ public class PlaylistController {
         this.playlist = playlist;
     }
 
-    // Método para adicionar música na playlist
-    public boolean addSongController(String name, String durationString) {
-
-        try {
-            playlist.addLast(new SongModel(name, convertToCorrectDuration(durationString)));
-            return true;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-
-    }
-
     // Método para inserir no inicio da lista
     public boolean addSongFirstController(String name, String durationString) {
 
