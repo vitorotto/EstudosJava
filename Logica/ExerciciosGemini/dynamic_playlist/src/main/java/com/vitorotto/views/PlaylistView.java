@@ -56,15 +56,25 @@ public class PlaylistView {
     public void showMenuView() {
         System.out.println("Menu do sistema");
         System.out.println("1. Adicionar no inicio");
-        System.out.println("2. Exibir Playlist de músicas");
+        System.out.println("2. Adicionar no final");
+        System.out.println("3. Exibir Playlist de músicas");
     }
 
     public void execView(int opc) {
         switch (opc) {
             case 1 -> addSongFirstView();
-            case 2 -> showPlaylistView();
+            case 2 -> addSongLastView();
+            case 3 -> showPlaylistView();
             default -> throw new AssertionError();
         }
+    }
+
+    // Método para inserir música no final da lista
+    public void addSongLastView() {
+        clearBuffer();
+        String name = readSongNameInput(_s);
+        String durationString = readSongDurationInput(_s);
+        get_controller().addSongLastController(name, durationString);
     }
 
     // Método para exibir a lista
