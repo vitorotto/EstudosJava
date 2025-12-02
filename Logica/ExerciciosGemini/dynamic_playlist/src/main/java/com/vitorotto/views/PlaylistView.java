@@ -58,6 +58,7 @@ public class PlaylistView {
         System.out.println("1. Adicionar no inicio");
         System.out.println("2. Adicionar no final");
         System.out.println("3. Exibir Playlist de músicas");
+        System.out.println("4. Tocar Playlist");
     }
 
     public void execView(int opc) {
@@ -65,7 +66,16 @@ public class PlaylistView {
             case 1 -> addSongFirstView();
             case 2 -> addSongLastView();
             case 3 -> showPlaylistView();
+            case 4 -> playPlaylist();
             default -> throw new AssertionError();
+        }
+    }
+
+    // Método para tocar a playlist
+    public void playPlaylist() {
+        while (!get_controller().getPlaylist().isEmpty()) {
+            System.out.println("Tocando: " + get_controller().getPlaylist().getFirst().getSongName());
+            get_controller().playNextSongController();
         }
     }
 

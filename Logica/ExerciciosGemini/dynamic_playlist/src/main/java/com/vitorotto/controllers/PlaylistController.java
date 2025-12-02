@@ -3,6 +3,7 @@ package com.vitorotto.controllers;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 
 import com.vitorotto.models.SongModel;
 
@@ -19,6 +20,23 @@ public class PlaylistController {
 
     public void setPlaylist(LinkedList<SongModel> playlist) {
         this.playlist = playlist;
+    }
+
+    // Método para tocar a proxima musica
+    public boolean playNextSongController() {
+        if (playlist.isEmpty())
+            return false;
+        try {
+            SongModel currentSong = playlist.getFirst();
+            long totalSecondsDuration = currentSong.getSongDuration().getSeconds();
+            TimeUnit.SECONDS.sleep(totalSecondsDuration);
+            playlist.removeFirst();
+            return true;
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+
     }
 
     // Método para inserir no inicio da lista
