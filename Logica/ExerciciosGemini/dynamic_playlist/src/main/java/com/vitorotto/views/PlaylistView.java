@@ -59,7 +59,7 @@ public class PlaylistView {
         System.out.println("2. Adicionar no final");
         System.out.println("3. Exibir Playlist de músicas");
         System.out.println("4. Tocar Playlist");
-        System.out.println("0. Ecerrar programa");
+        System.out.println("0. Encerrar programa");
         System.out.println("---------- --------------- ----------");
 
     }
@@ -69,6 +69,7 @@ public class PlaylistView {
         System.out.println("1. Tocar proxima: " + get_controller().getFisrtSongOfPlaylist());
         System.out.println("2. Tocar anterior: " + get_controller().getLastSongOfHistory());
         System.out.println("3. Voltar ao menu");
+        System.out.println("0. Encerrar programa");
         System.out.println("-------- ----------------- --------");
     }
 
@@ -93,21 +94,15 @@ public class PlaylistView {
 
     // Método para iniciar a playlist
     public void initPlaylistView() {
-        showMenuPlaylistView();
-        System.out.println("Digite uma opção: ");
-        int opcPlaylist = validateIntInput(_s);
-        if (opcPlaylist == 0) {
-            System.out.println("Programa encerrado");
-        } else {
-            execPlaylistView(opcPlaylist);
-        }
-        while (getOpc() != 3) {
+        int opcPlaylist = -1;
+        while (opcPlaylist != 3 && opcPlaylist != 0) {
             showMenuPlaylistView();
             System.out.println("Digite uma opção: ");
             opcPlaylist = validateIntInput(_s);
             if (opcPlaylist == 0) {
                 System.out.println("Programa encerrado");
-            } else {
+                System.exit(0);
+            } else if (opcPlaylist != 3) {
                 execPlaylistView(opcPlaylist);
             }
         }

@@ -12,10 +12,10 @@ public class Main {
 
         PlaylistController controller = new PlaylistController(playlist);
 
-        controller.addSongFirstController("Teste 1", "00:02");
-        controller.addSongFirstController("Teste 2", "00:02");
-        controller.addSongFirstController("Teste 3", "00:02");
-        controller.addSongFirstController("Teste 4", "00:02");
+        controller.addSongLastController("Teste 1 final", "00:02");
+        controller.addSongLastController("Teste 2 final", "00:02");
+        controller.addSongFirstController("Teste 1 inicio", "00:02");
+        controller.addSongFirstController("Teste 2 inicio", "00:02");
 
         PlaylistView view = new PlaylistView(controller);
 
