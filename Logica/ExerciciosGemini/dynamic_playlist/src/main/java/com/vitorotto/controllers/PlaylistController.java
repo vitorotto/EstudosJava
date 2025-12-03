@@ -22,6 +22,14 @@ public class PlaylistController {
         this.playlist = playlist;
     }
 
+    // Método para pegar a primeira música da lista
+    public String getFisrtSong() {
+        String songName = playlist.getFirst().getSongName();
+        String songDuration = convertDurationToString(playlist.getFirst().getSongDuration());
+
+        return String.format("%s: %s", songName, songDuration);
+    }
+
     // Método para tocar a proxima musica
     public boolean playNextSongController() {
         if (playlist.isEmpty())
