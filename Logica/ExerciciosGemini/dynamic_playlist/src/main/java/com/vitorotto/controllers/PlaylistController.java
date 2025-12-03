@@ -2,16 +2,20 @@ package com.vitorotto.controllers;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 import com.vitorotto.models.SongModel;
 
 public class PlaylistController {
     private LinkedList<SongModel> playlist;
+    private Deque<SongModel> history;
 
     public PlaylistController(LinkedList<SongModel> playlist) {
         this.playlist = playlist;
+        this.history = new LinkedList<>();
     }
 
     public LinkedList<SongModel> getPlaylist() {
@@ -22,12 +26,55 @@ public class PlaylistController {
         this.playlist = playlist;
     }
 
+    public Queue<SongModel> getHistory() {
+        return history;
+    }
+
+    public void setHistory(Deque<SongModel> history) {
+        this.history = history;
+    }
+
+    // Método para pegar a musica tocada, remover da lista e salvar no histórico
+    public boolean getSongAndAddToHistory(SongModel song) {
+        history.addLast(song);
+        return true;
+    }
+
     // Método para pegar a primeira música da lista
-    public String getFisrtSong() {
+    public String getFisrtSongOfPlaylist() {
+        if (playlist.isEmpty())
+            return "As músicas terminaram";
         String songName = playlist.getFirst().getSongName();
         String songDuration = convertDurationToString(playlist.getFirst().getSongDuration());
 
         return String.format("%s: %s", songName, songDuration);
+    }
+
+    // Método para pegar a ultima música adicionada no histórico
+    public String getLastSongOfHistory() {
+        if (history.isEmpty())
+            return "Nada no histórico";
+        String songName = history.getLast().getSongName();
+        String songDuration = convertDurationToString(history.peek().getSongDuration());
+
+        return String.format("%s: %s", songName, songDuration);
+    }
+
+    // Método para tocar a musica anterior
+    public boolean playPreviousSongController() {
+        if (history.isEmpty())
+            return false;
+        try {
+            SongModel currentSong = history.removeLast();
+            playlist.addFirst(currentSong);
+            long totalSecondsDuration = currentSong.getSongDuration().getSeconds();
+            TimeUnit.SECONDS.sleep(totalSecondsDuration);
+            return true;
+        } catch (InterruptedException e) {
+
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
     // Método para tocar a proxima musica
@@ -38,6 +85,7 @@ public class PlaylistController {
             SongModel currentSong = playlist.getFirst();
             long totalSecondsDuration = currentSong.getSongDuration().getSeconds();
             TimeUnit.SECONDS.sleep(totalSecondsDuration);
+            getSongAndAddToHistory(currentSong);
             playlist.removeFirst();
             return true;
         } catch (InterruptedException e) {
@@ -71,6 +119,26 @@ public class PlaylistController {
         }
     }
 
+    // Método que retorna o histórico de músicas em String
+    public ArrayList<String> getHistoryData() {
+        try {
+            ArrayList<String> songsHistory = new ArrayList<>();
+            int pos = 1;
+            for (SongModel song : history) {
+                String songName = song.getSongName();
+                String songDuration = convertDurationToString(song.getSongDuration());
+                songsHistory.add(String.format("%d. Nome: %s | Duração: %s", pos, songName, songDuration));
+                pos++;
+            }
+            return songsHistory;
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    // Método que retorna a lista de músicas em String
     public ArrayList<String> getPlaylistData() {
 
         try {
@@ -106,4 +174,5 @@ public class PlaylistController {
 
         return String.format("%d:%d", minutes, seconds);
     }
+
 }

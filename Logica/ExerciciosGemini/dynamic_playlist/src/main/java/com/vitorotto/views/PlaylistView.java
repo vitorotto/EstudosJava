@@ -54,12 +54,22 @@ public class PlaylistView {
     }
 
     public void showMenuView() {
-        System.out.println("Menu do sistema");
+        System.out.println("---------- Menu do sistema ----------");
         System.out.println("1. Adicionar no inicio");
         System.out.println("2. Adicionar no final");
         System.out.println("3. Exibir Playlist de músicas");
         System.out.println("4. Tocar Playlist");
         System.out.println("0. Ecerrar programa");
+        System.out.println("---------- --------------- ----------");
+
+    }
+
+    public void showMenuPlaylistView() {
+        System.out.println("-------- Menu da Playlist ---------");
+        System.out.println("1. Tocar proxima: " + get_controller().getFisrtSongOfPlaylist());
+        System.out.println("2. Tocar anterior: " + get_controller().getLastSongOfHistory());
+        System.out.println("3. Voltar ao menu");
+        System.out.println("-------- ----------------- --------");
     }
 
     public void execView(int opc) {
@@ -67,18 +77,40 @@ public class PlaylistView {
             case 1 -> addSongFirstView();
             case 2 -> addSongLastView();
             case 3 -> showPlaylistView();
-            case 4 -> playPlaylist();
+            case 4 -> initPlaylistView();
             default -> throw new AssertionError();
         }
     }
 
-    // Método para tocar a playlist
-    public void playPlaylist() {
-        while (!get_controller().getPlaylist().isEmpty()) {
-            System.out.println("Tocando: " + get_controller().getFisrtSong());
-            get_controller().playNextSongController();
+    public void execPlaylistView(int opc) {
+        switch (opc) {
+            case 1 -> get_controller().playNextSongController();
+            case 2 -> get_controller().playPreviousSongController();
+            case 3 -> initView();
+            default -> throw new AssertionError();
         }
-        System.out.println("Fim da playlist");
+    }
+
+    // Método para iniciar a playlist
+    public void initPlaylistView() {
+        showMenuPlaylistView();
+        System.out.println("Digite uma opção: ");
+        int opcPlaylist = validateIntInput(_s);
+        if (opcPlaylist == 0) {
+            System.out.println("Programa encerrado");
+        } else {
+            execPlaylistView(opcPlaylist);
+        }
+        while (getOpc() != 3) {
+            showMenuPlaylistView();
+            System.out.println("Digite uma opção: ");
+            opcPlaylist = validateIntInput(_s);
+            if (opcPlaylist == 0) {
+                System.out.println("Programa encerrado");
+            } else {
+                execPlaylistView(opcPlaylist);
+            }
+        }
     }
 
     // Método para inserir música no final da lista
@@ -92,11 +124,24 @@ public class PlaylistView {
     // Método para exibir a lista
     public void showPlaylistView() {
         PlaylistController controller = get_controller();
-        ArrayList<String> songsList = controller.getPlaylistData();
 
-        for (String song : songsList) {
-            System.out.println(song);
-        }
+        ArrayList<String> songsList = controller.getPlaylistData();
+        System.out.println("Na playlist principal: ");
+        if (songsList.isEmpty())
+            System.out.println("Nada na playlist principal");
+        else
+            for (String song : songsList) {
+                System.out.println(song);
+            }
+
+        ArrayList<String> songsHistory = controller.getHistoryData();
+        System.out.println("No histórico: ");
+        if (songsHistory.isEmpty())
+            System.out.println("Nada no histórico");
+        else
+            for (String song : songsHistory) {
+                System.out.println(song);
+            }
     }
 
     // Método para adicionar elemento no inicio da lista
