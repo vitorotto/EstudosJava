@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 import com.vitorotto.models.SongModel;
@@ -26,7 +25,7 @@ public class PlaylistController {
         this.playlist = playlist;
     }
 
-    public Queue<SongModel> getHistory() {
+    public Deque<SongModel> getHistory() {
         return history;
     }
 
