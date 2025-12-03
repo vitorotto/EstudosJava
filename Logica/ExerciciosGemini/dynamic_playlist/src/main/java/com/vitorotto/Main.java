@@ -11,6 +11,12 @@ public class Main {
         LinkedList<SongModel> playlist = new LinkedList<>();
 
         PlaylistController controller = new PlaylistController(playlist);
+
+        controller.addSongFirstController("Teste 1", "00:02");
+        controller.addSongFirstController("Teste 2", "00:02");
+        controller.addSongFirstController("Teste 3", "00:02");
+        controller.addSongFirstController("Teste 4", "00:02");
+
         PlaylistView view = new PlaylistView(controller);
 
         view.initView();
