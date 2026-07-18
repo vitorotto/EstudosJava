@@ -1,9 +1,9 @@
 # Processamento Ecomerce
 Projeto simples criado para aprender java e processamento de retornos de requisições em .json\
-Simple project create to learn Java and returns processing of requests in .json
+Simple project created to learn Java and returns processing of requests in .json
 
 # Pacotes deste projeto
-    Packages of this project
+Packages of this project
 
 ## Model
 Neste pacote que serão descritas todas as entidades de um banco de dados\
