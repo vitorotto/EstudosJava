@@ -3,12 +3,9 @@ package com.vitorotto.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class ClientModel {
+import com.vitorotto.model.enums.ClientType;
 
-    public enum ClientType {
-        VIP,
-        COMUM
-    }
+public class ClientModel {
 
     private final int id;
     private String name;
@@ -68,9 +65,8 @@ public class ClientModel {
 
     @Override
     public String toString() {
-        return "ClientModel [getId()=" + getId() + ", getName()=" + getName() + ", getType()=" + getType()
-                + ", getCity()=" + getCity() + ", getState()=" + getState() + ", getRegistrationDate()="
-                + getRegistrationDate() + "]";
+        return "ClientModel [id=" + id + ", name=" + name + ", type=" + type + ", city=" + city + ", state=" + state
+                + ", registrationDate=" + registrationDate + "]";
     }
 
     @Override
