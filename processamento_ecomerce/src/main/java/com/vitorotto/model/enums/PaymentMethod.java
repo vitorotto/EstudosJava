@@ -4,5 +4,5 @@ public enum PaymentMethod {
     CARTAO_CREDITO,
     BOLETO,
     PIX,
-    CARTAO_DEBITO;
+    CARTAO_DEBITO
 }
