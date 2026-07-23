@@ -36,8 +36,6 @@ public class OrderItemModel {
             this.quantity -= quantity;
     }
 
-    
-
     @Override
     public String toString() {
         return "[" + product.getName() + " - " + quantity + "]";
