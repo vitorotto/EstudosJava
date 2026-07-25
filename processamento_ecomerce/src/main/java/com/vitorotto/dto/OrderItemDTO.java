@@ -21,6 +21,7 @@ public class OrderItemDTO {
     public int getProductId() {
         return productId;
     }
+
     public int getQuantity() {
         return quantity;
     }
