@@ -1,7 +1,5 @@
 package com.vitorotto.dto;
 
-import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
