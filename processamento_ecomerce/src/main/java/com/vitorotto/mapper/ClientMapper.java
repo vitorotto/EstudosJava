@@ -1,5 +1,6 @@
 package com.vitorotto.mapper;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.vitorotto.dto.ClientDTO;
@@ -23,13 +24,14 @@ public class ClientMapper {
             try {
                 // Client type converted to the enum value
                 ClientType type = ClientType.valueOf(clientDTO.getType());
+                LocalDate registrationDate = LocalDate.parse(clientDTO.getRegistrationDate());
                 result.addSucessItem(new ClientModel(
                         clientDTO.getId(),
                         clientDTO.getName(),
                         type,
                         clientDTO.getCity(),
                         clientDTO.getState(),
-                        clientDTO.getRegistrationDate()));
+                        registrationDate));
                 // If don't add and throws an IllegalArgumentException
             } catch (IllegalArgumentException e) {
                 // Write an error message on errors list of MappingResult class
