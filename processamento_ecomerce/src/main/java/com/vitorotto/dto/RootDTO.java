@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RootDTO {
+    
     private final List<ClientDTO> clientList;
     private final List<ProductDTO> productList;
     private final List<OrderDTO> orderList;

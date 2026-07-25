@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderDTO {
+    
     private final int id;
     private final int clientId;
     private final LocalDate date;

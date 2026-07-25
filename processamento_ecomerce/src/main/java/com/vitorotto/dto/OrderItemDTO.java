@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderItemDTO {
+    
     private final int productId;
     private final int quantity;
 
