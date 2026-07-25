@@ -12,7 +12,7 @@ public class ClientDTO {
     private final String type;
     private final String city;
     private final String state;
-    private final LocalDate registrationDate;
+    private final String registrationDate;
 
     @JsonCreator
     public ClientDTO(
@@ -27,7 +27,7 @@ public class ClientDTO {
         @JsonProperty("estado")
         String state,
         @JsonProperty("dataCadastro")
-        LocalDate registrationDate
+        String registrationDate
     ) {
         this.id = id;
         this.name = name;
@@ -57,7 +57,7 @@ public class ClientDTO {
         return state;
     }
 
-    public LocalDate getRegistrationDate() {
+    public String getRegistrationDate() {
         return registrationDate;
     }
 
