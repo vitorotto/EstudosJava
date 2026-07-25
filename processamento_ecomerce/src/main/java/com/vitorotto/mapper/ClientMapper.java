@@ -8,7 +8,7 @@ import com.vitorotto.model.enums.ClientType;
 
 public class ClientMapper {
 
-    private final List<ClientDTO> dtos;
+    private List<ClientDTO> dtos;
 
     public ClientMapper(List<ClientDTO> dtos) {
         this.dtos = dtos;
