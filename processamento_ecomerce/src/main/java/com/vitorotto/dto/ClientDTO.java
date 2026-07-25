@@ -59,4 +59,5 @@ public class ClientDTO {
     public LocalDate getRegistrationDate() {
         return registrationDate;
     }
+
 }
