@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderDTO {
-    private final int orderId;
+    private final int id;
     private final int clientId;
     private final LocalDate date;
     private final String paymentMethod;
@@ -17,7 +17,7 @@ public class OrderDTO {
     @JsonCreator
     public OrderDTO(
         @JsonProperty("id")
-        int orderId,
+        int id,
         @JsonProperty("clienteId")
         int clientId,
         @JsonProperty("data")
@@ -29,7 +29,7 @@ public class OrderDTO {
         @JsonProperty("status")
         String status
     ) {
-        this.orderId = orderId;
+        this.id = id;
         this.clientId = clientId;
         this.date = date;
         this.paymentMethod = paymentMethod;
@@ -37,8 +37,8 @@ public class OrderDTO {
         this.status = status;
     }
 
-    public int getOrderId() {
-        return orderId;
+    public int getId() {
+        return id;
     }
 
     public int getClientId() {
